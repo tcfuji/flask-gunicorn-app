@@ -28,3 +28,40 @@ $ source flaskenv/bin/activate
 ```
 (flaskenv) $ pip install gunicorn flask
 ```
+6. Deactivate the virtual environment.
+```
+(flaskenv) $ deactivate
+```
+
+7. Move `myproject.service` to the `/etc/systemd/system` directory.
+```
+$ mv myproject.service /etc/systemd/system
+```
+
+8. Start the Gunicorn service and enable it so that it starts at boot.
+```
+$ sudo systemctl start myproject
+$ sudo systemctl enable myproject
+```
+
+9. Move `myproject` file to `/etc/nginx/sites-available` directory.
+```
+$ mv myproject /etc/nginx/sites-available
+```
+
+10. To enable the Nginx server block configuration we've just created, link the file to the sites-enabled directory.
+```
+$ sudo ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+```
+
+11. Restart the Nginx process to read the our new config.
+```
+$ sudo systemctl restart nginx
+```
+
+12. Allow access to the Nginx server.
+```
+$ sudo ufw allow 'Nginx Full'
+```
+
+13. Enter `http://localhost` in your web browser.
