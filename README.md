@@ -28,15 +28,3 @@ $ source flaskenv/bin/activate
 ```
 (flaskenv) $ pip install gunicorn flask
 ```
-
-6. Allow access to port 5000.
-```
-(flaskenv) $ sudo ufw allow 5000
-```
-
-7. Test Flask app.
-```
-(flaskenv) $ python myproject.py
-```
-
-8. Visit http://localhost:5000
