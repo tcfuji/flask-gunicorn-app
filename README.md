@@ -1,5 +1,7 @@
 ## Flask Gunicorn App for foodRev-Planner
 
+(Shortened version of https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-16-04)
+
 ### Setup Instructions
 
 1. Install the necessary Ubuntu Repositories:
