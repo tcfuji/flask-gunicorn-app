@@ -18,6 +18,7 @@ $ sudo pip install virtualenv
 3. Clone the `flask-gunicorn-app` repository and change directory to the repository.
 ```
 $ git clone https://github.com/tcfuji/flask-gunicorn-app.git
+$ cd flask-gunicorn-app
 ```
 
 4. Create a virtual environment that stores the Flask project's Python requirements and activate the virtual environment.
@@ -35,9 +36,9 @@ $ source flaskenv/bin/activate
 (flaskenv) $ deactivate
 ```
 (Make sure you change `foodrev` to the correct directory path name!!)
+
 7. Move `myproject.service` to the `/etc/systemd/system` directory.
 ```
-$ cd flask-gunicorn-app
 $ sudo mv myproject.service /etc/systemd/system
 ```
 
