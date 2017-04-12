@@ -6,8 +6,8 @@ After=network.target
 User=foodrev
 Group=www-data
 WorkingDirectory=/home/foodrev/flask-gunicorn-app
-Environment="PATH=/home/foodrev/flask-gunicorn-app/flaskenv/bin"
-ExecStart=/home/foodrev/flask-gunicorn-app/flaskenv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
+Environment="PATH=$HOME/flask-gunicorn-app/flaskenv/bin"
+ExecStart=$HOME/flask-gunicorn-app/flaskenv/bin/gunicorn --workers 3 --bind unix:myproject.sock -m 007 wsgi:app
 
 [Install]
 WantedBy=multi-user.target

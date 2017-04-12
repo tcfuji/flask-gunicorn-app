@@ -35,7 +35,6 @@ $ source flaskenv/bin/activate
 ```
 (flaskenv) $ deactivate
 ```
-(Make sure you change `foodrev` to the correct directory path name!!)
 
 7. Move `myproject.service` to the `/etc/systemd/system` directory.
 ```
@@ -48,7 +47,7 @@ $ sudo systemctl start myproject
 $ sudo systemctl enable myproject
 ```
 
-(Make sure you change `foodrev` to the correct directory path name!!)
+(In `myproject`, make sure you change `foodrev` to the correct directory path name!!)
 9. Move `myproject` file to `/etc/nginx/sites-available` directory.
 ```
 $ sudo mv myproject /etc/nginx/sites-available
