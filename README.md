@@ -7,17 +7,17 @@
 1. Install the necessary Ubuntu Repositories:
 ```
 $ sudo apt-get update
-$ sudo apt-get install python-pip python-dev nginx
+$ sudo apt-get install python-pip python-dev nginx git
 ```
 
-2. Create a Python Virtual Environment
+2.  Pip install virtualenv
 ```
 $ sudo pip install virtualenv
 ```
 
-3. Clone the `flask-gunicorn-app` repository.
+3. Clone the `flask-gunicorn-app` repository and change directory to the repository.
 ```
-$ git clone
+$ git clone https://github.com/tcfuji/flask-gunicorn-app.git
 ```
 
 4. Create a virtual environment that stores the Flask project's Python requirements and activate the virtual environment.
@@ -34,10 +34,11 @@ $ source flaskenv/bin/activate
 ```
 (flaskenv) $ deactivate
 ```
-
+(Make sure you change `foodrev` to the correct directory path name!!)
 7. Move `myproject.service` to the `/etc/systemd/system` directory.
 ```
-$ mv myproject.service /etc/systemd/system
+$ cd flask-gunicorn-app
+$ sudo mv myproject.service /etc/systemd/system
 ```
 
 8. Start the Gunicorn service and enable it so that it starts at boot.
@@ -46,9 +47,10 @@ $ sudo systemctl start myproject
 $ sudo systemctl enable myproject
 ```
 
+(Make sure you change `foodrev` to the correct directory path name!!)
 9. Move `myproject` file to `/etc/nginx/sites-available` directory.
 ```
-$ mv myproject /etc/nginx/sites-available
+$ sudo mv myproject /etc/nginx/sites-available
 ```
 
 10. To enable the Nginx server block configuration we've just created, link the file to the sites-enabled directory.
