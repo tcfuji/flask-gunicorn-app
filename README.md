@@ -35,7 +35,7 @@ $ source flaskenv/bin/activate
 ```
 (flaskenv) $ deactivate
 ```
-
+(In `myproject.service`, make sure you change `foodrev` to the correct directory path name!!)
 7. Move `myproject.service` to the `/etc/systemd/system` directory.
 ```
 $ sudo mv myproject.service /etc/systemd/system
